@@ -1,0 +1,155 @@
+/* Grammar Checker Extension Styles */
+
+.gc-error-underline {
+  background: linear-gradient(to right, #e53e3e 0%, #e53e3e 100%) bottom left / 100% 2px no-repeat;
+  text-decoration: none !important;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Tooltip panel */
+#gc-tooltip {
+  position: fixed;
+  z-index: 2147483647;
+  background: #1a1a2e;
+  color: #e2e8f0;
+  border-radius: 10px;
+  padding: 0;
+  min-width: 260px;
+  max-width: 340px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35), 0 2px 8px rgba(0,0,0,0.2);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  border: 1px solid #2d3748;
+  overflow: hidden;
+  animation: gc-slide-in 0.15s ease-out;
+}
+
+@keyframes gc-slide-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.gc-tooltip-header {
+  background: #e53e3e;
+  color: #fff;
+  padding: 8px 12px;
+  font-weight: 600;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.gc-tooltip-header .gc-icon {
+  font-size: 14px;
+}
+
+.gc-tooltip-message {
+  padding: 10px 12px 6px;
+  color: #e2e8f0;
+  line-height: 1.5;
+  font-size: 13px;
+}
+
+.gc-tooltip-original {
+  padding: 0 12px 8px;
+  color: #fc8181;
+  font-size: 12px;
+}
+
+.gc-tooltip-original strong {
+  color: #fc8181;
+  text-decoration: line-through;
+}
+
+.gc-tooltip-suggestions {
+  padding: 4px 12px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.gc-suggestion-btn {
+  background: #2b6cb0;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+
+.gc-suggestion-btn:hover {
+  background: #3182ce;
+}
+
+.gc-tooltip-footer {
+  padding: 6px 12px;
+  border-top: 1px solid #2d3748;
+  color: #718096;
+  font-size: 11px;
+}
+
+.gc-dismiss-btn {
+  background: none;
+  border: none;
+  color: #718096;
+  cursor: pointer;
+  font-size: 11px;
+  padding: 0;
+  font-family: inherit;
+  text-decoration: underline;
+}
+
+.gc-dismiss-btn:hover {
+  color: #a0aec0;
+}
+
+/* Badge indicator */
+.gc-badge {
+  position: absolute;
+  z-index: 2147483646;
+  background: #e53e3e;
+  color: #fff;
+  border-radius: 10px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(229,62,62,0.4);
+  line-height: 1.4;
+  border: 1.5px solid #fff;
+  pointer-events: all;
+  transition: transform 0.1s;
+}
+
+.gc-badge:hover {
+  transform: scale(1.08);
+}
+
+.gc-badge.gc-no-errors {
+  background: #38a169;
+  box-shadow: 0 2px 8px rgba(56,161,105,0.4);
+}
+
+/* Wrapper for overlaying the mirror */
+.gc-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Error highlight inside mirror */
+.gc-highlight {
+  background: rgba(229, 62, 62, 0.18);
+  border-bottom: 2px solid #e53e3e;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+}
